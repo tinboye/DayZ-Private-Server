@@ -1,5 +1,4 @@
-/* Copyright (c) 2005 MySQL AB, 2009 Sun Microsystems, Inc.
-   Use is subject to license terms.
+/* Copyright (c) 2005, 2015, Oracle and/or its affiliates. All rights reserved.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -16,13 +15,13 @@
 
 #ifndef _my_plugin_ftparser_h
 #define _my_plugin_ftparser_h
+
 #include "plugin.h"
 
 /*************************************************************************
   API for Full-text parser plugin. (MYSQL_FTPARSER_PLUGIN)
 */
 
-#define MYSQL_FTPARSER_INTERFACE_VERSION 0x0100
 
 /* Parsing modes. Set in  MYSQL_FTPARSER_PARAM::mode */
 enum enum_ftparser_mode
@@ -111,6 +110,8 @@ enum enum_ft_token_type
 
   trunc: Corresponds to the '*' operator in the default setting of the
   ft_boolean_syntax system variable.
+
+  position: Start position in bytes of the word in the document, used by InnoDB FTS.
 */
 
 typedef struct st_mysql_ftparser_boolean_info
@@ -120,6 +121,7 @@ typedef struct st_mysql_ftparser_boolean_info
   int weight_adjust;
   char wasign;
   char trunc;
+  int position;
   /* These are parser state and must be removed. */
   char prev;
   char *quot;
@@ -184,7 +186,7 @@ typedef struct st_mysql_ftparser_param
                         MYSQL_FTPARSER_BOOLEAN_INFO *boolean_info);
   void *ftparser_state;
   void *mysql_ftparam;
-  struct charset_info_st *cs;
+  const struct charset_info_st *cs;
   char *doc;
   int length;
   int flags;

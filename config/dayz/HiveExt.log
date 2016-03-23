@@ -1,0 +1,38 @@
+2016-03-23 15:19:18 HiveExt: [Information] HiveExt ce45a1f7524c
+2016-03-23 15:19:40 HiveExt: [Error] Timeout
+2016-03-23 15:32:54 HiveExt: [Information] HiveExt ce45a1f7524c
+2016-03-23 15:32:54 Database: [Information] Connected to MySQL database localhost:3306/hivemind client ver: 5.5.28 server ver: 5.7.11
+2016-03-23 15:32:54 Database: [Information] Connected to MySQL database localhost:3306/hivemind client ver: 5.5.28 server ver: 5.7.11
+2016-03-23 15:32:54 HiveExt: [Debug] Uninitializing subsystem: Logging Subsystem
+2016-03-23 15:32:54 HiveExt: [Debug] Original params: |CHILD:307:|
+2016-03-23 15:32:54 HiveExt: [Information] Method: 307 Params: 
+2016-03-23 15:32:54 HiveExt: [Information] Result: ["PASS",[2016,3,23,15,32]]
+2016-03-23 15:32:54 HiveExt: [Debug] Original params: |CHILD:302:1337:|
+2016-03-23 15:32:54 HiveExt: [Information] Method: 302 Params: 1337:
+2016-03-23 15:32:54 HiveExt: [Information] Result: ["ObjectStreamStart",0,"d20c3991892507cb51d244392983a8c4"]
+2016-03-23 15:32:55 HiveExt: [Debug] Original params: |CHILD:101:76561198080809662:1337:ShootingBlanks:|
+2016-03-23 15:32:55 HiveExt: [Information] Method: 101 Params: 76561198080809662:1337:ShootingBlanks:
+2016-03-23 15:32:55 HiveExt: [Information] Created a new player 76561198080809662 named 'ShootingBlanks'
+2016-03-23 15:32:55 HiveExt: [Information] Created a new character 1 for player 'ShootingBlanks' (76561198080809662)
+2016-03-23 15:32:55 HiveExt: [Information] Result: ["PASS",true,"1","",0.96]
+2016-03-23 15:32:55 HiveExt: [Debug] Original params: |CHILD:203:1:[[],[]]:["",[],[]]:|
+2016-03-23 15:32:55 HiveExt: [Information] Method: 203 Params: 1:[[],[]]:[,[],[]]:
+2016-03-23 15:32:55 HiveExt: [Information] Result: ["PASS"]
+2016-03-23 15:32:55 HiveExt: [Debug] Original params: |CHILD:103:76561198080809662:1:1:|
+2016-03-23 15:32:55 HiveExt: [Information] Method: 103 Params: 76561198080809662:1:1:
+2016-03-23 15:32:55 HiveExt: [Information] Result: ["PASS"]
+2016-03-23 15:32:57 HiveExt: [Debug] Original params: |CHILD:307:|
+2016-03-23 15:32:57 HiveExt: [Information] Method: 307 Params: 
+2016-03-23 15:32:57 HiveExt: [Information] Result: ["PASS",[2016,3,23,15,32]]
+2016-03-23 15:33:04 HiveExt: [Debug] Original params: |CHILD:102:1:|
+2016-03-23 15:33:04 HiveExt: [Information] Method: 102 Params: 1:
+2016-03-23 15:33:04 HiveExt: [Information] Result: ["PASS",[],[0,0,0,0],[[],[]],[],2500]
+2016-03-23 15:33:40 HiveExt: [Debug] Original params: |CHILD:103:76561198080809662:1:0:|
+2016-03-23 15:33:40 HiveExt: [Information] Method: 103 Params: 76561198080809662:1:0:
+2016-03-23 15:33:40 HiveExt: [Information] Result: ["PASS"]
+2016-03-23 15:33:40 HiveExt: [Debug] Original params: |CHILD:201:1:[1,[3805.1,2268.54,0.00143194]]:[[],["HandRoadFlare","ItemPainkiller","ItemBandage"],""]:["",[[],[]],[[],[]]]:[false,false,false,false,false,false,false,12000,[],[0,0],0,"O",true,[0,0,0],false]:false:false:0:0:32563:5:[["","amovpercmstpsnonwnondnon",36],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]:0:0:"Survivor2_DZ":0:|
+2016-03-23 15:33:40 HiveExt: [Information] Method: 201 Params: 1:[1,[3805.1,2268.54,0.001]]:[[],[HandRoadFlare,ItemPainkiller,ItemBandage],]:[,[[],[]],[[],[]]]:[false,false,false,false,false,false,false,12000,[],[0,0],0,O,true,[0,0,0],false]:false:false:0:0:32563:5:[[,amovpercmstpsnonwnondnon,36],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]:0:0:Survivor2_DZ:0:
+2016-03-23 15:33:40 HiveExt: [Information] Result: ["PASS"]
+2016-03-23 15:33:40 HiveExt: [Debug] Original params: |CHILD:201:1:[1,[3805.1,2268.54,0.00143194]]:[[],["HandRoadFlare","ItemPainkiller","ItemBandage"],""]:["",[[],[]],[[],[]]]:[false,false,false,false,false,false,false,12000,[],[0,0],0,"O",true,[0,0,0],false]:false:false:0:0:0:0:[["","amovpercmstpsnonwnondnon",36],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]:0:0::0:|
+2016-03-23 15:33:40 HiveExt: [Information] Method: 201 Params: 1:[1,[3805.1,2268.54,0.001]]:[[],[HandRoadFlare,ItemPainkiller,ItemBandage],]:[,[[],[]],[[],[]]]:[false,false,false,false,false,false,false,12000,[],[0,0],0,O,true,[0,0,0],false]:false:false:0:0:0:0:[[,amovpercmstpsnonwnondnon,36],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]:0:0::0:
+2016-03-23 15:33:41 HiveExt: [Information] Result: ["PASS"]

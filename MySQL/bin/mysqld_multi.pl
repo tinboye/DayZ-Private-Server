@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -19,6 +19,7 @@
 
 use Getopt::Long;
 use POSIX qw(strftime getcwd);
+use File::Path qw(mkpath);
 
 $|=1;
 $VER="2.16";
@@ -145,6 +146,7 @@ sub main
   usage() if (!defined($ARGV[0]) ||
 	      (!($ARGV[0] =~ m/^start$/i) &&
 	       !($ARGV[0] =~ m/^stop$/i) &&
+	       !($ARGV[0] =~ m/^reload$/i) &&
 	       !($ARGV[0] =~ m/^report$/i)));
 
   if (!$opt_no_log)
@@ -158,7 +160,7 @@ sub main
     print strftime "%a %b %e %H:%M:%S %Y", localtime;
     print "\n";
   }
-  if ($ARGV[0] =~ m/^start$/i)
+  if (($ARGV[0] =~ m/^start$/i) || ($ARGV[0] =~ m/^reload$/i))
   {
     if (!defined(($mysqld= my_which($opt_mysqld))) && $opt_verbose)
     {
@@ -167,7 +169,11 @@ sub main
       print "This is OK, if you are using option \"mysqld=...\" in ";
       print "groups [mysqldN] separately for each.\n\n";
     }
-    start_mysqlds();
+    if ($ARGV[0] =~ m/^start$/i) {
+      start_mysqlds();
+    } elsif ($ARGV[0] =~ m/^reload$/i) {
+      reload_mysqlds();
+    }
   }
   else
   {
@@ -323,6 +329,39 @@ sub start_mysqlds()
     $com= "$mysqld";
     for ($j = 0, $tmp= ""; defined($options[$j]); $j++)
     {
+      if ("--datadir=" eq substr($options[$j], 0, 10)) {
+        $datadir = $options[$j];
+        $datadir =~ s/\-\-datadir\=//;
+        eval { mkpath($datadir) };
+        if ($@) {
+          print "FATAL ERROR: Cannot create data directory $datadir: $!\n";
+          exit(1);
+        }
+        if (! -d $datadir."/mysql") {
+          if (-w $datadir) {
+            print "\n\nInstalling new database in $datadir\n\n";
+            $install_cmd="C:/Program Files (x86)/MySQL/bin/mysql_install_db ";
+            $install_cmd.="--user=mysql ";
+            $install_cmd.="--datadir=$datadir";
+            system($install_cmd);
+          } else {
+            print "\n";
+            print "FATAL ERROR: Tried to create mysqld under group [$groups[$i]],\n";
+            print "but the data directory is not writable.\n";
+            print "data directory used: $datadir\n";
+            exit(1);
+          }
+        }
+
+        if (! -d $datadir."/mysql") {
+          print "\n";
+          print "FATAL ERROR: Tried to start mysqld under group [$groups[$i]],\n";
+          print "but no data directory was found or could be created.\n";
+          print "data directory used: $datadir\n";
+          exit(1);
+        }
+      }
+
       if ("--mysqladmin=" eq substr($options[$j], 0, 13))
       {
 	# catch this and ignore
@@ -387,6 +426,58 @@ sub start_mysqlds()
 }
 
 ####
+#### reload multiple servers
+####
+
+sub reload_mysqlds()
+{
+  my (@groups, $com, $tmp, $i, @options, $j);
+
+  if (!$opt_no_log)
+  {
+    w2log("\nReloading MySQL servers\n","$opt_log",0,0);
+  }
+  else
+  {
+    print "\nReloading MySQL servers\n";
+  }
+  @groups = &find_groups($groupids);
+  for ($i = 0; defined($groups[$i]); $i++)
+  {
+    $mysqld_server = $mysqld;
+    @options = defaults_for_group($groups[$i]);
+
+    for ($j = 0, $tmp= ""; defined($options[$j]); $j++)
+    {
+      if ("--mysqladmin=" eq substr($options[$j], 0, 13))
+      {
+        # catch this and ignore
+      }
+      elsif ("--mysqld=" eq substr($options[$j], 0, 9))
+      {
+        $options[$j] =~ s/\-\-mysqld\=//;
+        $mysqld_server = $options[$j];
+      }
+      elsif ("--pid-file=" eq substr($options[$j], 0, 11))
+      {
+        $options[$j] =~ s/\-\-pid-file\=//;
+        $pid_file = $options[$j];
+      }
+    }
+    $com = "killproc -p $pid_file -HUP $mysqld_server";
+    system($com);
+
+    $com = "touch $pid_file";
+    system($com);
+  }
+  if (!$i && !$opt_no_log)
+  {
+    w2log("No MySQL servers to be reloaded (check your GNRs)",
+         "$opt_log", 0, 0);
+  }
+}
+
+###
 #### stop multiple servers
 ####
 
@@ -704,8 +795,8 @@ password   = my_password
 [mysqld2]
 socket     = /tmp/mysql.sock2
 port       = 3307
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.5/data2/hostname.pid2
-datadir    = C:/Program Files/MySQL/MySQL Server 5.5/data2
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data2/hostname.pid2
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data2
 language   = C:/Program Files (x86)/MySQL/share/mysql/english
 user       = unix_user1
 
@@ -715,24 +806,24 @@ ledir      = /path/to/mysqld-binary/
 mysqladmin = /path/to/mysqladmin
 socket     = /tmp/mysql.sock3
 port       = 3308
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.5/data3/hostname.pid3
-datadir    = C:/Program Files/MySQL/MySQL Server 5.5/data3
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data3/hostname.pid3
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data3
 language   = C:/Program Files (x86)/MySQL/share/mysql/swedish
 user       = unix_user2
 
 [mysqld4]
 socket     = /tmp/mysql.sock4
 port       = 3309
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.5/data4/hostname.pid4
-datadir    = C:/Program Files/MySQL/MySQL Server 5.5/data4
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data4/hostname.pid4
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data4
 language   = C:/Program Files (x86)/MySQL/share/mysql/estonia
 user       = unix_user3
  
 [mysqld6]
 socket     = /tmp/mysql.sock6
 port       = 3311
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.5/data6/hostname.pid6
-datadir    = C:/Program Files/MySQL/MySQL Server 5.5/data6
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data6/hostname.pid6
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data6
 language   = C:/Program Files (x86)/MySQL/share/mysql/japanese
 user       = unix_user4
 EOF
@@ -749,7 +840,7 @@ sub usage
 $my_progname version $VER by Jani Tolonen
 
 Description:
-$my_progname can be used to start, or stop any number of separate
+$my_progname can be used to start, reload, or stop any number of separate
 mysqld processes running in different TCP/IP ports and UNIX sockets.
 
 $my_progname can read group [mysqld_multi] from my.cnf file. You may
@@ -767,16 +858,16 @@ integer starting from 1. These groups should be the same as the regular
 [mysqld] group, but with those port, socket and any other options
 that are to be used with each separate mysqld process. The number
 in the group name has another function; it can be used for starting,
-stopping, or reporting any specific mysqld server.
+reloading, stopping, or reporting any specific mysqld server.
 
-Usage: $my_progname [OPTIONS] {start|stop|report} [GNR,GNR,GNR...]
-or     $my_progname [OPTIONS] {start|stop|report} [GNR-GNR,GNR,GNR-GNR,...]
+Usage: $my_progname [OPTIONS] {start|reload|stop|report} [GNR,GNR,GNR...]
+or     $my_progname [OPTIONS] {start|reload|stop|report} [GNR-GNR,GNR,GNR-GNR,...]
 
-The GNR means the group number. You can start, stop or report any GNR,
+The GNR means the group number. You can start, reload, stop or report any GNR,
 or several of them at the same time. (See --example) The GNRs list can
 be comma separated or a dash combined. The latter means that all the
 GNRs between GNR1-GNR2 will be affected. Without GNR argument all the
-groups found will either be started, stopped, or reported. Note that
+groups found will either be started, reloaded, stopped, or reported. Note that
 syntax for specifying GNRs must appear without spaces.
 
 Options:

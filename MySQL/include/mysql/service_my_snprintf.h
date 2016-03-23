@@ -1,5 +1,6 @@
 #ifndef MYSQL_SERVICE_MY_SNPRINTF_INCLUDED
-/* Copyright (c) 2009, 2010, Oracle and/or its affiliates. All rights reserved.
+#define MYSQL_SERVICE_MY_SNPRINTF_INCLUDED
+/* Copyright (c) 2009, 2015, Oracle and/or its affiliates. All rights reserved.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -49,6 +50,7 @@
         string will be quoted according to MySQL identifier quoting rules.
 
   Both <width> and <precision> can be specified as numbers or '*'.
+  If an asterisk is used, an argument of type int is consumed.
 
   <length modifier> can be 'l', 'll', or 'z'.
 
@@ -96,6 +98,4 @@ size_t my_vsnprintf(char *to, size_t n, const char* fmt, va_list ap);
 }
 #endif
 
-#define MYSQL_SERVICE_MY_SNPRINTF_INCLUDED
-#endif
-
+#endif /* #define MYSQL_SERVICE_MY_SNPRINTF_INCLUDED */

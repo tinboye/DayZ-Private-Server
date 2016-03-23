@@ -1,0 +1,130 @@
+2016-03-23T15:19:50.709710Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2016-03-23T15:19:50.709710Z 0 [Warning] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2016-03-23T15:19:50.709710Z 0 [Warning] 'NO_AUTO_CREATE_USER' sql mode was not set.
+2016-03-23T15:19:50.709710Z 0 [Warning] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2016-03-23T15:19:50.729710Z 0 [Note] mysqld (mysqld 5.7.11) starting as process 13264 ...
+2016-03-23T15:19:50.769710Z 0 [ERROR] Plugin keyring_file reported: 'keyring_file initialization failure. Please check if the keyring_file_data points to readable keyring file or keyring file can be created in the specified location. The keyring_file will stay unusable until correct path to the keyring file gets provided'
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Uses event mutexes
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Memory barrier is not used
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Number of pools: 1
+2016-03-23T15:19:50.769710Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2016-03-23T15:19:50.829710Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+2016-03-23T15:19:50.849710Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2016-03-23T15:19:50.919710Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+2016-03-23T15:19:50.929710Z 0 [Note] InnoDB: Log scan progressed past the checkpoint lsn 19115607
+2016-03-23T15:19:50.929710Z 0 [Note] InnoDB: Doing recovery: scanned up to log sequence number 19115616
+2016-03-23T15:19:50.939710Z 0 [Note] InnoDB: Doing recovery: scanned up to log sequence number 19115616
+2016-03-23T15:19:50.939710Z 0 [Note] InnoDB: Database was not shutdown normally!
+2016-03-23T15:19:50.939710Z 0 [Note] InnoDB: Starting crash recovery.
+2016-03-23T15:19:52.518217Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2016-03-23T15:19:52.518217Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2016-03-23T15:19:52.518217Z 0 [Note] InnoDB: Setting file '.\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2016-03-23T15:19:52.725218Z 0 [Note] InnoDB: File '.\ibtmp1' size is now 12 MB.
+2016-03-23T15:19:52.725218Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+2016-03-23T15:19:52.725218Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+2016-03-23T15:19:52.725218Z 0 [Note] InnoDB: Waiting for purge to start
+2016-03-23T15:19:52.795218Z 0 [Note] InnoDB: 5.7.11 started; log sequence number 19115616
+2016-03-23T15:19:52.805218Z 0 [Note] InnoDB: Loading buffer pool(s) from f:\Arma\Server\MySQL\data\ib_buffer_pool
+2016-03-23T15:19:52.805218Z 0 [Note] Plugin 'FEDERATED' is disabled.
+2016-03-23T15:19:52.805218Z 0 [Warning] System table 'plugin' is expected to be transactional.
+2016-03-23T15:19:52.815218Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+2016-03-23T15:19:52.815218Z 0 [Warning] Failed to set up SSL because of the following SSL library error: SSL context is not usable without certificate and private key
+2016-03-23T15:19:52.815218Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+2016-03-23T15:19:52.815218Z 0 [Note] IPv6 is available.
+2016-03-23T15:19:52.815218Z 0 [Note]   - '::' resolves to '::';
+2016-03-23T15:19:52.815218Z 0 [Note] Server socket created on IP: '::'.
+2016-03-23T15:19:52.825218Z 0 [Warning] Failed to open optimizer cost constant tables
+
+2016-03-23T15:19:52.839218Z 0 [Warning] System table 'time_zone_leap_second' is expected to be transactional.
+2016-03-23T15:19:52.840218Z 0 [Warning] System table 'time_zone_name' is expected to be transactional.
+2016-03-23T15:19:52.840218Z 0 [Warning] System table 'time_zone' is expected to be transactional.
+2016-03-23T15:19:52.841218Z 0 [Warning] System table 'time_zone_transition_type' is expected to be transactional.
+2016-03-23T15:19:52.841218Z 0 [Warning] System table 'time_zone_transition' is expected to be transactional.
+2016-03-23T15:19:52.842219Z 0 [Note] InnoDB: Buffer pool(s) load completed at 160323 11:19:52
+2016-03-23T15:19:52.852219Z 0 [Warning] System table 'servers' is expected to be transactional.
+2016-03-23T15:19:52.852219Z 0 [ERROR] Column count of performance_schema.events_waits_current is wrong. Expected 19, found 16. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.852219Z 0 [ERROR] Column count of performance_schema.events_waits_history is wrong. Expected 19, found 16. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.852219Z 0 [ERROR] Column count of performance_schema.events_waits_history_long is wrong. Expected 19, found 16. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.852219Z 0 [ERROR] Native table 'performance_schema'.'events_waits_summary_by_host_by_event_name' has the wrong structure
+2016-03-23T15:19:52.852219Z 0 [ERROR] Incorrect definition of table performance_schema.events_waits_summary_by_thread_by_event_name: expected column 'THREAD_ID' at position 0 to have type bigint(20), found type int(11).
+2016-03-23T15:19:52.852219Z 0 [ERROR] Native table 'performance_schema'.'events_waits_summary_by_user_by_event_name' has the wrong structure
+2016-03-23T15:19:52.852219Z 0 [ERROR] Native table 'performance_schema'.'events_waits_summary_by_account_by_event_name' has the wrong structure
+2016-03-23T15:19:52.862219Z 0 [ERROR] Column count of performance_schema.file_summary_by_event_name is wrong. Expected 23, found 5. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.862219Z 0 [ERROR] Column count of performance_schema.file_summary_by_instance is wrong. Expected 25, found 6. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.862219Z 0 [ERROR] Native table 'performance_schema'.'host_cache' has the wrong structure
+2016-03-23T15:19:52.862219Z 0 [ERROR] Incorrect definition of table performance_schema.mutex_instances: expected column 'LOCKED_BY_THREAD_ID' at position 2 to have type bigint(20), found type int(11).
+2016-03-23T15:19:52.862219Z 0 [ERROR] Native table 'performance_schema'.'objects_summary_global_by_type' has the wrong structure
+2016-03-23T15:19:52.862219Z 0 [ERROR] Incorrect definition of table performance_schema.rwlock_instances: expected column 'WRITE_LOCKED_BY_THREAD_ID' at position 2 to have type bigint(20), found type int(11).
+2016-03-23T15:19:52.862219Z 0 [ERROR] Native table 'performance_schema'.'setup_actors' has the wrong structure
+2016-03-23T15:19:52.862219Z 0 [ERROR] Native table 'performance_schema'.'setup_objects' has the wrong structure
+2016-03-23T15:19:52.862219Z 0 [ERROR] Native table 'performance_schema'.'table_io_waits_summary_by_index_usage' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'table_io_waits_summary_by_table' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'table_lock_waits_summary_by_table' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Column count of performance_schema.threads is wrong. Expected 17, found 3. Created with MySQL 50529, now running 50711. Please use mysql_upgrade to fix this error.
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_current' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_history' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_history_long' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_summary_by_thread_by_event_name' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_summary_by_account_by_event_name' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_summary_by_user_by_event_name' has the wrong structure
+2016-03-23T15:19:52.872219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_summary_by_host_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_stages_summary_global_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_current' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_history' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_history_long' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_thread_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_account_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_user_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_host_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_global_by_event_name' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_digest' has the wrong structure
+2016-03-23T15:19:52.882219Z 0 [ERROR] Native table 'performance_schema'.'events_statements_summary_by_program' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_current' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_history' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_history_long' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_summary_by_thread_by_event_name' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_summary_by_account_by_event_name' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_summary_by_user_by_event_name' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_summary_by_host_by_event_name' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'events_transactions_summary_global_by_event_name' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'users' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'accounts' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'hosts' has the wrong structure
+2016-03-23T15:19:52.892219Z 0 [ERROR] Native table 'performance_schema'.'socket_instances' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'socket_summary_by_instance' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'socket_summary_by_event_name' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'session_connect_attrs' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'session_account_connect_attrs' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'memory_summary_global_by_event_name' has the wrong structure
+2016-03-23T15:19:52.902219Z 0 [ERROR] Native table 'performance_schema'.'memory_summary_by_account_by_event_name' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'memory_summary_by_host_by_event_name' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'memory_summary_by_thread_by_event_name' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'memory_summary_by_user_by_event_name' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'table_handles' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'metadata_locks' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_connection_configuration' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_group_members' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_connection_status' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_applier_configuration' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_applier_status' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_applier_status_by_coordinator' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_applier_status_by_worker' has the wrong structure
+2016-03-23T15:19:52.912219Z 0 [ERROR] Native table 'performance_schema'.'replication_group_member_stats' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'prepared_statements_instances' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'user_variables_by_thread' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'status_by_account' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'status_by_host' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'status_by_thread' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'status_by_user' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'global_status' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'session_status' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'variables_by_thread' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'global_variables' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Native table 'performance_schema'.'session_variables' has the wrong structure
+2016-03-23T15:19:52.922219Z 0 [ERROR] Incorrect definition of table mysql.db: expected column 'User' at position 2 to have type char(32), found type char(16).
+2016-03-23T15:19:52.922219Z 0 [ERROR] mysql.user has no `Event_priv` column at position 28
+2016-03-23T15:19:52.932219Z 0 [ERROR] Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
+2016-03-23T15:19:52.932219Z 0 [Note] mysqld: ready for connections.
+Version: '5.7.11'  socket: ''  port: 3306  MySQL Community Server (GPL)

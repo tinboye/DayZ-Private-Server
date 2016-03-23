@@ -1,3 +1,20 @@
+This is a fork of pwn0zors private server pack.  https://github.com/Pwnoz0r/DayZ-Private-Server 
+Changes:
+- MySQL database updated to version 5.7.11
+- Dayz @hive updated to version 1.8.7
+- Overwatch 0.2.5 included 
+- Epoch 1.0.5.1 included
+- Overpoch included 
+- Bat file launchers for each mod
+- Bat file launcher to start mysql only (for editing outside of running server)
+- Installer for mysqlworkbench included in MySQL folder.
+- Mod configs are in individual folders inside of config folder. Arma2oaserver.rpt will be created in each folder automatically.
+- verifysignatures =0 by default so you can have dialog editors etc loaded
+- Login and password for Databases are same as the mod (dayz, epoch, overpoch)
+- Servers have unique dll files. We store them in the mod folders and are copied to server root on startup
+
+
+
 ![OpenDayZ Logo](http://i.imgur.com/PY7FjoM.png)<br />
 
 ##Requirements
@@ -22,8 +39,9 @@ After merging both directories, download the latest release from the GitHub mast
 
     /serverfolder/Addons/
     /serverfolder/BattleEye/
-    /serverfolder/cfgdayz/
-    /serverfolder/@dayz/
+    /serverfolder/config/
+    /serverfolder/@dayz_epoch/
+	/serverfolder/@dayz_overwatch/
     /serverfolder/@hive/
     /serverfolder/MySQL/
     /serverfolder/MPMissions/
