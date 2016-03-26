@@ -2,9 +2,9 @@ This is a fork of pwn0zors private server pack.  https://github.com/Pwnoz0r/DayZ
 Changes:
 - MySQL database updated to version 5.7.11
 - Dayz @hive updated to version 1.8.7
-- Overwatch 0.2.5 included 
-- Epoch 1.0.5.1 included
-- Overpoch included 
+- @DayzOverwatch_server 0.2.5 included with startup.bat file
+- @Dayz_Epoch_server 1.0.5.1 included with startup.bat file
+- @dayz_Overpoch_server included with startup.bat file 
 - Framework for customMOD included
 - Bat file launchers for each mod
 - Bat file launcher to start mysql only (for editing outside of running server)
