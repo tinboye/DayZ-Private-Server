@@ -1,0 +1,6 @@
+If you want to have a mod other than Dayz, Epoch, Overwatch or Overpoch a framework is already setup.
+Install the 'mod' files in the @customMOD folder (in an addons subfolder of course) and put the 'serverside' files 
+into @customMOD_server folder (again, inside of an addons subfolder).   
+There is an empty mission folder for you to insert your mission.
+The config files are already included in config/customMOD
+
