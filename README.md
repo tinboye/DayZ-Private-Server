@@ -5,12 +5,13 @@ Changes:
 - Overwatch 0.2.5 included 
 - Epoch 1.0.5.1 included
 - Overpoch included 
+- Framework for customMOD included
 - Bat file launchers for each mod
 - Bat file launcher to start mysql only (for editing outside of running server)
 - Installer for mysqlworkbench included in MySQL folder.
 - Mod configs are in individual folders inside of config folder. Arma2oaserver.rpt will be created in each folder automatically.
-- verifysignatures =0 by default so you can have dialog editors etc loaded
-- Login and password for Databases are same as the mod (dayz, epoch, overpoch)
+- verifysignatures = 0 by default so you can have dialog editors etc loaded
+- Login and password for all DB are same (dayz,dayz)
 - Servers have unique dll files. We store them in the mod folders and are copied to server root on startup
 
 
