@@ -1,0 +1,1 @@
+bec -f config.cfg --dsc

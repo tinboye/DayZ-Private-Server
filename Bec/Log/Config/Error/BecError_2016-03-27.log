@@ -1,0 +1,16 @@
+﻿21:32:49 : Config Error : BeCustomBanFiles : Bans1.txt is not a valid file!
+﻿21:32:49 : Config Error : BeCustomBanFiles : file2.txt is not a valid file!
+﻿21:32:49 : Config Error : BeCustomBanFiles : file3.txt is not a valid file!
+﻿21:32:49 : Config Error : BeCustomBanFiles has no valid files defined!
+﻿21:34:56 : Config Error : BeCustomBanFiles : Bans1.txt is not a valid file!
+﻿21:34:56 : Config Error : BeCustomBanFiles : file2.txt is not a valid file!
+﻿21:34:56 : Config Error : BeCustomBanFiles : file3.txt is not a valid file!
+﻿21:34:56 : Config Error : BeCustomBanFiles has no valid files defined!
+﻿21:36:21 : Config Error : BeCustomBanFiles : Bans1.txt is not a valid file!
+﻿21:36:21 : Config Error : BeCustomBanFiles : file2.txt is not a valid file!
+﻿21:36:21 : Config Error : BeCustomBanFiles : file3.txt is not a valid file!
+﻿21:36:21 : Config Error : BeCustomBanFiles has no valid files defined!
+﻿22:39:26 : Scheduler file contains a error, job Id's are not in order
+﻿22:41:08 : Scheduler file contains a error. not valid command in the cmd tag. Location id=9
+﻿23:27:28 : Admin file contains a error. guid tag is not correct, Location id=0
+﻿23:56:57 : Admin file contains a error. guid tag is not correct, Location id=0
